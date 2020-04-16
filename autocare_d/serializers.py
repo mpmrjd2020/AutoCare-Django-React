@@ -7,6 +7,7 @@ class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service_Log
         fields = ['id', 'vehicle', 'service_type', 'service_mileage', 'service_dt', 'service_by', 'service_receipt']
+        read_only_fields = ('vehicle',)
 
 
 class VehicleSerializer(serializers.ModelSerializer):
@@ -21,10 +22,10 @@ class VehicleSerializer(serializers.ModelSerializer):
         vehicle = Vehicle.objects.create(**validated_data)
         print(vehicle)
         print(services_data)
-        # for service_data in services_data:
-        Service_Log.objects.create(**services_data)
+        for service_data in services_data:
+            Service_Log.objects.create(vehicle=vehicle, **service_data)
         return vehicle
-   
+       
     def update(self, instance, validated_data):
         services_data = validated_data.pop('services')
         services = (instance.services).all()
@@ -37,12 +38,12 @@ class VehicleSerializer(serializers.ModelSerializer):
         instance.vehicle_image = validated_data.get('vehicle_image', instance.vehicle_image)
         instance.save()
 
-        for service in services_data:
+        for service_data in services_data:
             service = services.pop(0)
-            service.service_type = service_data.get('release_date', service.service_type)
-            service.service_mileage = service_data.get('num_stars', service.service_mileage)
-            service.service_dt = service_data.get('num_stars', service.service_dt)
-            service.service_by = service_data.get('num_stars', service.service_by)
-            service.service_receipt = service_data.get('num_stars', service_receipt)
+            service.service_type = service_data.get('service_type', service.service_type)
+            service.service_mileage = service_data.get('service_mileage', service.service_mileage)
+            service.service_dt = service_data.get('service_dt', service.service_dt)
+            service.service_by = service_data.get('service_by', service.service_by)
+            # service.service_receipt = service_data.get('service_receipt', service_receipt)
             service.save()
         return instance
