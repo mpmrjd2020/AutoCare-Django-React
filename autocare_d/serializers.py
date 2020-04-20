@@ -7,7 +7,7 @@ class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service_Log
         fields = ['id', 'vehicle', 'service_type', 'service_mileage', 'service_dt', 'service_by', 'service_receipt']
-        read_only_fields = ('vehicle',)
+        # read_only_fields = ('vehicle',)
 
 
 class VehicleSerializer(serializers.ModelSerializer):
@@ -17,11 +17,8 @@ class VehicleSerializer(serializers.ModelSerializer):
         fields = ['id', 'make', 'model', 'year', 'color', 'current_mileage', 'vehicle_image', 'services']
 
     def create(self, validated_data):
-        print(validated_data)
         services_data = validated_data.pop('services')
         vehicle = Vehicle.objects.create(**validated_data)
-        print(vehicle)
-        print(services_data)
         for service_data in services_data:
             Service_Log.objects.create(vehicle=vehicle, **service_data)
         return vehicle
