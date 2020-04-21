@@ -6,13 +6,23 @@ Car Maintenance Log Application...
 
 * Main car Listing page
     * Add vehicle
-    
+
 * Service listing page - Listing individual car and their service records
     * Add service record
     * Update vehicle record
     * Delete vehicle record
     * Update service record
     * Delete service record
+
+## Screen Design
+ 
+* [Main page - Vehicle listing](https://wireframe.cc/ohUxqa)
+
+  ![Vehicle Listing Screen Shot](CarListingScreenShot.png)
+
+* [Vehicle maintenance details](https://wireframe.cc/cp5fH6)
+
+  ![Vehicle and Service Log Screen Shot](CarMaintenanceDetailsScreenShot.png)
 
 ## Application Technology
 
@@ -22,12 +32,11 @@ Car Maintenance Log Application...
 
 ### Backend 
 
-* Django, Postgress
+* Django, Postgress, JSON
 
 ### Deployment
 
 * Heroku
-
 
 ## Application Production Links
 
@@ -44,14 +53,7 @@ Car Maintenance Log Application...
 [Autocare Back End Repository](https://github.com/mpmrjd2020/AutoCare-Django-React)
 
 ## Architecture
-[Database Models](/Autocare-Django-React/Database Model - Screen Shot 2020-04-20 )
-
-## Screen Design
- 
-* [Main page - Vehicle listing](https://wireframe.cc/ohUxqa)
-
- * [Car maitenace details]( https://wireframe.cc/cp5fH6)
-
+![Database Models](./DatabaseModelScreenShot.png )
 
 ## Challenges - What To Look Forward To
 * Nested model creation and developping logic around
