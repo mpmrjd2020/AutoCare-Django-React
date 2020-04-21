@@ -1,16 +1,43 @@
-# AutoCare-Django-React
+## AutoCare-Django-React
+
 Car Maintenance Log Application...
 
+## Major Functionalities
 
-# Applicationn Production Links
+* Main car Listing page
+    * Add vehicle
+    
+* Service listing page - Listing individual car and their service records
+    * Add service record
+    * Update vehicle record
+    * Delete vehicle record
+    * Update service record
+    * Delete service record
 
-## Heroku
+## Application Technology
+
+### FrontEnd
+
+* ReactJS, HTML, CSS
+
+### Backend 
+
+* Django, Postgress
+
+### Deployment
+
+* Heroku
+
+
+## Application Production Links
+
+### Heroku
 
 [Autocare Front End App](https://autocare-sei.herokuapp.com/)
 
 [Autocare Back End App](https://enigmatic-harbor-74670.herokuapp.com/)
 
-## Github
+### Github
 
 [Autocare Front End Repository](https://github.com/mpmrjd2020/AutoCare-React-Frontend)
 
@@ -25,21 +52,12 @@ Car Maintenance Log Application...
 
  * [Car maitenace details]( https://wireframe.cc/cp5fH6)
 
-## Major Functionalities
 
-* Main car Listing page
-    * Add vehicle
-* Service listing page - Listing individual car and their service records
-    * Add service record
-    * Update vehicle record
-    * Delete vehicle record
-    * Update service record
-    * Delete service record
-
-
-## Challenges
+## Challenges - What To Look Forward To
 * Nested model creation and developping logic around
 * React Frontend with Django Backend architecture (debugging)
 * Application has MVP - Additional functionalities
 * Prioritization
+* Refactoring
+* Enhance the app
 
